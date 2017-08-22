@@ -1,10 +1,11 @@
 class TreeNode:
-    def __init__(self, key, val, left=None, right=None, parent=None):
+    def __init__(self, key, val, left=None, right=None, parent=None, balanceFactor=0):
         self.key = key
         self.payload = val
         self.left_child = left
         self.right_child = right
         self.parent = parent
+        self.balanceFactor = balanceFactor
 
     def has_left_child(self):
         return self.left_child

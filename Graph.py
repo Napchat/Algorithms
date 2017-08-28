@@ -27,6 +27,11 @@ class Graph(object):
             nv = self.addVertex(t)
         self.vertList[f].addNeighbor(self.vertList[t], cost)
 
+    def delEdge(self, f, t):
+        if f in self.vertList and t in self.vertList:
+            if self.vertList[t] in self.vertList[f].getConnections():
+                self.vertList[f].ConnectedTo.pop(self.vertList[t])
+
     def __iter__(self):
         return iter(self.vertList.values())
 

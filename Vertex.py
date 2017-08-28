@@ -11,16 +11,21 @@ class Vertex(object):
 
         # The discovery time tracks the number of steps in the algorithm
         # before a vertex if first encountered.
-        self.discovery_times = 
+        self.discovery_times = None
 
         # The finish time is the number of steps in the algorithm before a
         # vertex is colored black.
-        self.finish_times =
+        self.finish_times = None
 
     def addNeighbor(self, nbr, weight=0):
         self.connectedTo[nbr] = weight
 
     def getConnections(self):
+        """Get the connected vertex.
+
+        Returns:
+            Vertex instances which are connected by the caller.
+        """
         return list(self.connectedTo.keys())
 
     def getId(self):

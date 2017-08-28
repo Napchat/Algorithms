@@ -4,6 +4,9 @@ class DFSGraph(Graph):
 	"""General depth first tree
 
 	选一条路一直往下走，走不通了再回过去看分支有没有没探索过的路可以走
+
+	:meth:`dfs` function and :meth:`dfvisit` function are going to 
+	calculate the finish times of every vertices.
 	"""
 
 	def __init__(self):

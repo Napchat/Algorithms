@@ -1,6 +1,6 @@
 class HashTable:
-	def __init__(self):
-		self.size = 11
+	def __init__(self, size=11):
+		self.size = size
 
 		# Hold the key items
 		self.slots = [None] * self.size

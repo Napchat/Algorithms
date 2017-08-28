@@ -1,16 +1,20 @@
 from Vertex import Vertex
 
 class Graph(object):
+    
     def __init__(self):
         self.vertList = {}
         self.numVertices = 0
+
+    def size(self):
+        return self.numVertices
 
     def addVertex(self, key):
         self.numVertices = self.numVertices + 1
         newVertex = Vertex(key)
         self.vertList[key] = newVertex
         return newVertex
-
+ 
     def getVertex(self, key):
         if key in self.vertList:
             return self.vertList[key]

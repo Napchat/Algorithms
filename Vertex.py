@@ -7,6 +7,16 @@ class Vertex(object):
         self.predecessor = None
         self.color = 'white'
 
+        # `discovery_times` and `finish_times` are used in DFS.
+
+        # The discovery time tracks the number of steps in the algorithm
+        # before a vertex if first encountered.
+        self.discovery_times = 
+
+        # The finish time is the number of steps in the algorithm before a
+        # vertex is colored black.
+        self.finish_times =
+
     def addNeighbor(self, nbr, weight=0):
         self.connectedTo[nbr] = weight
 
@@ -36,6 +46,12 @@ class Vertex(object):
 
     def getColor(self):
         return self.color
+
+    def setDiscovery(self, time):
+        self.discovery_times = time
+
+    def setFinish(self, time):
+        self.finish_times = time
 
     def __str__(self):
         """当调用str(self)时的值"""

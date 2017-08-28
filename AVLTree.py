@@ -3,6 +3,9 @@ from TreeNode import TreeNode
 
 class AVLTree(BinarySearchTree):
 
+    def __init__(self):
+        super().__init__()
+
     def _put(self, key, val, currentNode):
         if key < currentNode.key:
             if currentNode.has_left_child():

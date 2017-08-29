@@ -30,7 +30,7 @@ class Graph(object):
     def delEdge(self, f, t):
         if f in self.vertList and t in self.vertList:
             if self.vertList[t] in self.vertList[f].getConnections():
-                self.vertList[f].ConnectedTo.pop(self.vertList[t])
+                del self.vertList[f].connectedTo[self.vertList[t]]
 
     def __iter__(self):
         return iter(self.vertList.values())

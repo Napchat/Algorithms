@@ -58,9 +58,12 @@ class Vertex(object):
     def setFinish(self, time):
         self.finish_times = time
 
-    def __str__(self):
+    def getFinish(self):
+        return self.finish_times
+
+    '''def __str__(self):
         """当调用str(self)时的值"""
-        return str(self.id) + 'connectedTo: ' + str([x.id for x in self.connectedTo])
+        return str(self.id) + 'connectedTo: ' + str([x.id for x in self.connectedTo])'''
 
 if __name__ == '__main__':
     v1 = Vertex('BeiJing')

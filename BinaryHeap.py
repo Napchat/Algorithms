@@ -1,4 +1,5 @@
-class BinaryHeap:
+class BinaryHeap(object):
+    
     def __init__(self):
         self.heap_list = [0]
         self.current_size = 0
@@ -53,3 +54,6 @@ class BinaryHeap:
         while i > 0:
             self.perc_down(i)
             i = i - 1
+
+    def is_empty(self):
+        return self.current_size == 0

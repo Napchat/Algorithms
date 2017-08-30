@@ -16,7 +16,7 @@ class Vertex(object):
         # The finish time is the number of steps in the algorithm before a
         # vertex is colored black.
         self.finish_times = None
-
+        
     def addNeighbor(self, nbr, weight=0):
         self.connectedTo[nbr] = weight
 

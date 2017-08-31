@@ -28,6 +28,8 @@ class PriorityQueue(BinaryHeap):
             i = i + 1
 
     def build_heap(self, a_list):
+
+        # `perc_down` from the lowest father node
         i = len(a_list) // 2
         self.current_size = len(a_list)
         self.heap_list = [(0, None)] + a_list[:]

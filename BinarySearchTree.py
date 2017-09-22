@@ -65,16 +65,23 @@ class BinarySearchTree:
             raise KeyError('Error, key not in tree')
 
     def remove(self, node_to_remove):
+        # 如果是叶子节点
         if node_to_remove.is_leaf():
+            # 左结点还是右结点，直接删除
             if node_to_remove == node_to_remove.parent.left_child:
                 node_to_remove.parent.left_child = None
             else:
                 node_to_remove.parent.right_child = None
+
+        # 如果有左右两个子结点
         elif node_to_remove.has_both_children():
+            # successor是比当前结点稍大一点的那个结点，这样可以最大程度保持树的结构
             succ = node_to_remove.find_successor()
             succ.splice_out()
             node_to_remove.key = succ.key
             node_to_remove.payload = succ.payload
+
+        # 如果只有一个子结点
         else:
             if node_to_remove.has_left_child():
                 if node_to_remove.is_left_child():
@@ -128,6 +135,7 @@ class BinarySearchTree:
     def __iter__(self):
         if self:
             if self.has_left_child():
+                # 这也是迭代
                 for elem in self.left_child:
                     yield elem
             yield self.key

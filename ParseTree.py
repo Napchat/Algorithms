@@ -19,7 +19,7 @@ def build_parse_tree(fp_exp):
         elif i == ' ':
             pass
         elif i not in ['+', '-', '*', '/', ')']:
-            # operands
+            # 数字
             current_tree.set_root_val(int(i))
             parent = p_stack.pop()
             current_tree = parent

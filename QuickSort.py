@@ -9,6 +9,7 @@ def quick_sort_helper(a_list, first, last):
         quick_sort_helper(a_list, split_point+1, last)
 
 def partition(a_list, first, last):
+    # 基准
     pivot_value = a_list[first]
 
     left_mark = first + 1
@@ -16,21 +17,26 @@ def partition(a_list, first, last):
 
     done = False
     while not done:
+        # left_mark找到小于基准的数
         while (left_mark <= right_mark and
                 a_list[left_mark] <= pivot_value):
             left_mark = left_mark + 1
 
+        # right_mark找到大于基准的数
         while (right_mark >= left_mark and 
                 a_list[right_mark] >= pivot_value):
             right_mark = right_mark - 1
 
+        # 停止条件
         if right_mark < left_mark:
             done = True
         else:
             a_list[left_mark], a_list[right_mark] = a_list[right_mark], a_list[left_mark]
 
+    # 将基准移到中间去，自此列表分成了两部分
     a_list[first], a_list[right_mark] = a_list[right_mark], a_list[first]
 
+    # 返回基准所在位置
     return right_mark
 
 if __name__ == '__main__':

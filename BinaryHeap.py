@@ -5,6 +5,7 @@ class BinaryHeap(object):
         self.current_size = 0
 
     def perc_up(self, i):
+        """和父辈作比较"""
         while i // 2 > 0:
             if self.heap_list[i] < self.heap_list[i//2]:
                 self.heap_list[i], self.heap_list[i//2] = \
@@ -48,7 +49,11 @@ class BinaryHeap(object):
         return ret_val
 
     def build_heap(self, a_list):
+        """从倒数第二层开始perc_down"""
+
+        # i一定是最后一个子节点的父节点
         i = len(a_list) // 2
+        
         self.current_size = len(a_list)
         self.heap_list = [0] + a_list[:]
         while i > 0:

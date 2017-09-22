@@ -8,6 +8,8 @@ def merge_sort(a_list):
         merge_sort(left_half)
         merge_sort(right_half)
 
+
+        # 合并
         i = 0
         j = 0
         k = 0

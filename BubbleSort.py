@@ -10,17 +10,6 @@ def bubble_sort(list):
 
 def short_bubble_sort(list):
     '''如果没有交换发生，结束循环'''
-
-    '''exchange = True
-    pass_num = len(list)-1
-    while pass_num > 0 and exchange:
-        exchange = False
-        for i in range(pass_num):
-            if list[i] > list[i+1]:
-                exchange = True
-                list[i], list[i+1] = list[i+1], list[i]
-        pass_num -= 1'''
-
     exchange = True
     for pass_num in range(len(list)-1, 0, -1):
         if exchange == False:

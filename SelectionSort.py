@@ -1,5 +1,7 @@
 def selection_sort(a_list):
-	'''相比起冒泡法，虽然比较的次数一样，但减少了交换的次数'''
+	'''找到最大(最小)的一个，然后放到最后(最前面)，再在剩下的数中重复该过程
+	相比起冒泡法，虽然比较的次数一样，但减少了交换的次数
+	'''
 	for sort_num in range(0, len(a_list)-1):
 		pos_of_min = sort_num
 		for position in range(sort_num, len(a_list)):
